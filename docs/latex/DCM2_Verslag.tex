@@ -1,25 +1,32 @@
-\documentclass{article}
+\documentclass{report}
 \usepackage{subfiles}
 \title{DCM2 LAB: Performance van ESP32 TCP/IP stack}
-\date{\null}
 \author{\null}
-\begin{document}
-  \pagenumbering{gobble}
-  \maketitle
-\begin{figure*}[btp]
-\begin{tabular}{r@{ }l}
+\date{ \begin{tabular}{r@{ }l}
   		  Auteur:      & Victor Hogeweij \\[1ex] 
 		  Docenten: & Ruud Elsinghorst\\
           			   & Remko Welling\\[1ex]
           Klas:		   & ESE-2A\\[1ex]
-          Instituut:   & Hogeschool Arnhem-Nijmegen
+          Instituut:   & Hogeschool Arnhem-Nijmegen          
+\end{tabular}}
+\begin{document}
+  \pagenumbering{gobble}
 
-          
-\end{tabular}
-\end{figure*}
+  \maketitle
+
   \newpage
+  \chapter{Versiegeschiedenis}
+	\begin{tabular}{||l|c|r|p{6cm}||}
+   	 Versie & Datum & Persoon & Notitie/verandering \\
+   	 \hline \hline    
+   	 1 & 20-11-22 & VH & Opzet verslag \\
+	\end{tabular}
+
+ 
+  \newpage 
   \tableofcontents
   \newpage
   \pagenumbering{arabic}
+  \chapter{Introduction}
   \subfile{sections/Introduction}
 \end{document}

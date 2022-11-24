@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.20)  20 NOV 2022 15:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.24)  24 NOV 2022 12:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -68,34 +68,58 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 19.
 [1
 
-] (./DCM2_Verslag.toc)
+]
+No file DCM2_Verslag.toc.
 \tf@toc=\write3
 \openout3 = `DCM2_Verslag.toc'.
 
- [2
+[2
 
 ]
 Chapter 2.
 (./sections/Introduction.tex) [1
 
+]
+Chapter 3.
+(./sections/Research_question.tex) [2
+
+]
+Chapter 4.
+(./sections/Work_method.tex) [3
+
+]
+Chapter 5.
+(./sections/Executed_search.tex) [4
+
+]
+Chapter 6.
+(./sections/Results_and_conclusions.tex) [5
+
+]
+Chapter 7.
+(./sections/References.tex) [6
+
+]
+Chapter 8.
+(./sections/Appendixes.tex) [7
+
 ] (./DCM2_Verslag.aux) ) 
 Here is how much of TeX's memory you used:
- 591 strings out of 478238
- 11257 string characters out of 5850455
+ 623 strings out of 478238
+ 12240 string characters out of 5850455
  300795 words of memory out of 5000000
- 18884 multiletter control sequences out of 15000+600000
- 474419 words of font info for 45 fonts, out of 8000000 for 9000
+ 18901 multiletter control sequences out of 15000+600000
+ 474111 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,8n,48p,184b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb>
-Output written on DCM2_Verslag.pdf (4 pages, 70175 bytes).
+mbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on DCM2_Verslag.pdf (10 pages, 63624 bytes).
 PDF statistics:
- 42 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 57 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

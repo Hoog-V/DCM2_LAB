@@ -1,15 +1,18 @@
 \contentsline {chapter}{\numberline {1}Versiegeschiedenis}{}{}%
 \contentsline {chapter}{\numberline {2}Introductie}{1}{}%
-\contentsline {section}{\numberline {2.1}Introductie}{1}{}%
-\contentsline {chapter}{\numberline {3}Research Question}{2}{}%
-\contentsline {section}{\numberline {3.1}Aanpak}{2}{}%
-\contentsline {chapter}{\numberline {4}Work method}{3}{}%
+\contentsline {section}{\numberline {2.1}Doel en motivatie}{1}{}%
+\contentsline {chapter}{\numberline {3}Achtergrond}{2}{}%
+\contentsline {section}{\numberline {3.1}Embedded systemen}{2}{}%
+\contentsline {subsection}{\numberline {3.1.1}Het verschil tussen een computer en embedded systeem}{2}{}%
+\contentsline {chapter}{\numberline {4}Research Question}{3}{}%
 \contentsline {section}{\numberline {4.1}Aanpak}{3}{}%
-\contentsline {chapter}{\numberline {5}Executed search}{4}{}%
+\contentsline {chapter}{\numberline {5}Work method}{4}{}%
 \contentsline {section}{\numberline {5.1}Aanpak}{4}{}%
-\contentsline {chapter}{\numberline {6}Results and Conclusions}{5}{}%
+\contentsline {chapter}{\numberline {6}Executed search}{5}{}%
 \contentsline {section}{\numberline {6.1}Aanpak}{5}{}%
-\contentsline {chapter}{\numberline {7}References}{6}{}%
+\contentsline {chapter}{\numberline {7}Results and Conclusions}{6}{}%
 \contentsline {section}{\numberline {7.1}Aanpak}{6}{}%
-\contentsline {chapter}{\numberline {8}Appendixes}{7}{}%
+\contentsline {chapter}{\numberline {8}References}{7}{}%
 \contentsline {section}{\numberline {8.1}Aanpak}{7}{}%
+\contentsline {chapter}{\numberline {9}Appendixes}{8}{}%
+\contentsline {section}{\numberline {9.1}Aanpak}{8}{}%

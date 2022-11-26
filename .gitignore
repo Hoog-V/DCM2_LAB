@@ -52,3 +52,4 @@ Mkfile.old
 dkms.conf
 
 build/
+Automatic_test_script/log.txt

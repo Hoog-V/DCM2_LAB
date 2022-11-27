@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.24)  26 NOV 2022 23:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.11.24)  27 NOV 2022 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -97,37 +97,37 @@ Overfull \hbox (2.58408pt too wide) in paragraph at lines 4--5
 n-odigd is om bepaalde
  []
 
-) [2
+[2
 
-]
+]) [3]
 Chapter 4.
-(./sections/Research_question.tex) [3
+(./sections/Research_question.tex) [4
 
 ]
 Chapter 5.
-(./sections/Work_method.tex) [4
+(./sections/Work_method.tex) [5
 
 ]
 Chapter 6.
-(./sections/Executed_search.tex) [5
+(./sections/Executed_search.tex) [6
 
 ]
 Chapter 7.
-(./sections/Results_and_conclusions.tex) [6
+(./sections/Results_and_conclusions.tex) [7
 
 ]
 Chapter 8.
-(./sections/References.tex) [7
+(./sections/References.tex) [8
 
 ]
 Chapter 9.
-(./sections/Appendixes.tex) [8
+(./sections/Appendixes.tex) [9
 
 ] (./DCM2_Verslag.aux) ) 
 Here is how much of TeX's memory you used:
  634 strings out of 478238
  12457 string characters out of 5850455
- 304795 words of memory out of 5000000
+ 306795 words of memory out of 5000000
  18906 multiletter control sequences out of 15000+600000
  474726 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -137,10 +137,10 @@ mbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr17.pfb>
-Output written on DCM2_Verslag.pdf (11 pages, 90045 bytes).
+Output written on DCM2_Verslag.pdf (12 pages, 93049 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 68 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,22 +1,54 @@
 \documentclass[../DCM2_Verslag.tex]{subfiles}
+\usepackage{graphicx}
+\graphicspath{ {../../figures/} }
 \begin{document}
 
 Dit hoofdstuk gaat kort in op achtergrond informatie die benodigd is om bepaalde delen van het onderzoek te kunnen begrijpen.
-
+\\
 De eerste sectie van dit hoofdstuk geeft de benodigde achtergrond informatie over embedded systemen.
-
+\\
 De tweede sectie gaat over tcp/ip stacks
-
+\\
 De derde sectie gaat over sockets
 
 \section{Embedded systemen}
 Embedded systemen is een woord van de laatste jaren, maar embedded systemen bestaan al veel langer. Het enige wat nodig is, is een blik werpen op de apparaten om je heen: Telefoons, Modems, Televisies en koffie apparaten om een paar voorbeelden te noemen. 
-
+\\
 Deze sectie geeft een korte introductie in embedded systemen.
 
 \subsection{Het verschil tussen een computer en embedded systeem}
 Een embedded systeem wordt vaak beschreven als een systeem die een bepaald aantal vaste taken moet uitvoeren met beperkte ingebouwde functionaliteit. Dit zijn bijna altijd onzichtbare mini computers (microcomputers) die ingebouwd zitten in apparaten. Maar het kunnen ook chips met programmeerbare hardware zijn (FPGA's of CPLD's). 
+\\
+Het grote verschil tussen een computer en een embedded systeem is het doeleind. Embedded systemen zijn ontworpen voor een specifieke taak en zijn vaak alleen goed in deze taak. Normale computers daarentegen zijn gemaakt om verschillende uiteenlopende taken goed uittevoeren. Doordat een embedded systeem vaak maar een taak heeft zijn embedded systemen vaak uitgerust met veel minder geheugen en (algemene) computerkracht dan een normaal computersysteem.
 
-Het grote verschil tussen een computer en een embedded systeem zijn dat embedded systemen ook kunnen bestaan uit programmeerbare hardware die in werking heel anders werkt dan een normale computer. Maar ook tussen de minicomputers (microcontrollers) en normale computers zitten grote verschillen. De minicomputers hebben vaak veel minder geheugen en processorkracht dan een normale computer. 
+\subsection{Het ontwerp van embedded systemen}
+Zoals hierboven toegelicht zijn embedded systemen vaak ontworpen voor een specifiek aantal vaste taken. Zaken waar vaak rekening mee gehouden moet worden bij het ontwerpen van een embedded systeem zijn onder andere: reactie tijd nauwkeurigheid, formaat, energie verbruik en kosten. 
+\\\\
+Reactie tijd is een belangrijk begrip in het embedded domein. Of het hier gaat of het een taak is die op een bepaalde tijd wordt uitgevoerd (zoals een alarmklok) of de tijd tussen twee taken (zoals bij het geven van medicatie via infuuspompen) het kan een heel grote rol spelen in het ontwerp van het embedded systeem. Het moeilijkst is dan ook om deze tijden te bepalen, en vervolgens te bepalen of het strakke deadlines zijn die niet overschreden mogen worden. Zodat vervolgens in het ontwerp zoveel mogelijk gedaan kan worden om deze tijden te waarborgen. 
+\\\\
+Formaat van het systeem is ook een belangrijke weging. Veel embedded systemen die in dezer dagen verkocht worden, worden vaak verkocht omdat ze kleiner zijn dan hun voorganger(s). Neem als voorbeeld de smartphone, deze is door de jaren heen steeds kleiner en populairder geworden.
+\\\\
+Een andere belangrijke weging in het ontwerp van een embedded systeem is energieverbruik. 
+Verder gaande op wat hier boven staat, worden veel embedded systemen kleiner. De accu's of batterijen die deze systemen voeden worden niet kleiner. Met als gevolg dat embedded systemen zuiniger moeten worden om op een kleinere batterij of accu te kunnen werken.
+\\\\
+Ten slotte het laatste punt kosten. Ondanks alle punten hierboven, als het systeem heel veel kost zal het niet verkopen. Meestte eindgebruikers leveren graag een beetje performance of batterijduur in om een goedkoper product te hebben. Bij de ontwerpfase is het zeer belangrijk om het kostenplaatje in de gaten te houden bij een toevoeging aan of modificatie van het ontwerp.
+
+
+\subsection{TCP/IP stacks}
+Het tcp/ip model is een van de fundamentele bouwstenen van het huidige internet infrastructuur. Het model bestaat uit vier lagen, zie figuur 1.\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=2]{tcp_ip_model}
+\caption{TCP/IP model}
+\end{figure}
+De functies van de tcp/ip lagen zijn:
+- De netwerk laag: Deze laag komt overeen met de fysieke en data link laag in het osi model. Deze laag is verantwoordelijk voor de data transmissie over een netwerk, het definieert hoe twee apparaten fysiek met elkaar moeten communiceren.
+\\
+- De internet laag: Deze laag stuurt data van het bron apparaat naar apparaten in het pad tussen het bron en doel apparaat. Het IP protocol neemt het grootste deel van deze taak op zich.
+\\
+- De transport laag: Deze laag zorgt ervoort dat de data bij de juiste applicatie geleverd wordt. Er zijn twee protocollen die deze taak kunnen vervullen: TCP en UDP. TCP is verantwoordelijk voor het bieden van een betrouwbare, verliesloos connetie georienteerde verbinding. UDP daarentegen is verantwoordelijk voor onbetrouwbare connectieloze verbinding tussen twee hosts.
+\\
+- De applicatie laag: Deze laag verzorgt de communicatie tussen de transport laag en de software applicaties. Dit doet de laag met protocollen zoals: HTTP, HTTPS, FTP, SMTP, enz.
+\\
 
 \end{document}

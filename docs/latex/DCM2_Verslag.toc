@@ -4,15 +4,16 @@
 \contentsline {chapter}{\numberline {3}Achtergrond}{2}{}%
 \contentsline {section}{\numberline {3.1}Embedded systemen}{2}{}%
 \contentsline {subsection}{\numberline {3.1.1}Het verschil tussen een computer en embedded systeem}{2}{}%
-\contentsline {chapter}{\numberline {4}Research Question}{3}{}%
-\contentsline {section}{\numberline {4.1}Aanpak}{3}{}%
-\contentsline {chapter}{\numberline {5}Work method}{4}{}%
-\contentsline {section}{\numberline {5.1}Aanpak}{4}{}%
-\contentsline {chapter}{\numberline {6}Executed search}{5}{}%
-\contentsline {section}{\numberline {6.1}Aanpak}{5}{}%
-\contentsline {chapter}{\numberline {7}Results and Conclusions}{6}{}%
-\contentsline {section}{\numberline {7.1}Aanpak}{6}{}%
-\contentsline {chapter}{\numberline {8}References}{7}{}%
-\contentsline {section}{\numberline {8.1}Aanpak}{7}{}%
-\contentsline {chapter}{\numberline {9}Appendixes}{8}{}%
-\contentsline {section}{\numberline {9.1}Aanpak}{8}{}%
+\contentsline {subsection}{\numberline {3.1.2}Beperkingen van embedded systemen}{3}{}%
+\contentsline {chapter}{\numberline {4}Research Question}{4}{}%
+\contentsline {section}{\numberline {4.1}Aanpak}{4}{}%
+\contentsline {chapter}{\numberline {5}Work method}{5}{}%
+\contentsline {section}{\numberline {5.1}Aanpak}{5}{}%
+\contentsline {chapter}{\numberline {6}Executed search}{6}{}%
+\contentsline {section}{\numberline {6.1}Aanpak}{6}{}%
+\contentsline {chapter}{\numberline {7}Results and Conclusions}{7}{}%
+\contentsline {section}{\numberline {7.1}Aanpak}{7}{}%
+\contentsline {chapter}{\numberline {8}References}{8}{}%
+\contentsline {section}{\numberline {8.1}Aanpak}{8}{}%
+\contentsline {chapter}{\numberline {9}Appendixes}{9}{}%
+\contentsline {section}{\numberline {9.1}Aanpak}{9}{}%

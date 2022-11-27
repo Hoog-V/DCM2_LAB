@@ -1,6 +1,4 @@
 \documentclass[../DCM2_Verslag.tex]{subfiles}
-\usepackage{graphicx}
-\graphicspath{ {../../figures/} }
 \begin{document}
 
 Dit hoofdstuk gaat kort in op achtergrond informatie die benodigd is om bepaalde delen van het onderzoek te kunnen begrijpen.
@@ -34,7 +32,7 @@ Verder gaande op wat hier boven staat, worden veel embedded systemen kleiner. De
 Ten slotte het laatste punt kosten. Ondanks alle punten hierboven, als het systeem heel veel kost zal het niet verkopen. Meestte eindgebruikers leveren graag een beetje performance of batterijduur in om een goedkoper product te hebben. Bij de ontwerpfase is het zeer belangrijk om het kostenplaatje in de gaten te houden bij een toevoeging aan of modificatie van het ontwerp.
 
 
-\subsection{TCP/IP stacks}
+\section{TCP/IP stacks}
 Het tcp/ip model is een van de fundamentele bouwstenen van het huidige internet infrastructuur. Het model bestaat uit vier lagen, zie figuur 1.\\
 \begin{figure}[h]
 \centering
@@ -51,4 +49,21 @@ De functies van de tcp/ip lagen zijn:
 - De applicatie laag: Deze laag verzorgt de communicatie tussen de transport laag en de software applicaties. Dit doet de laag met protocollen zoals: HTTP, HTTPS, FTP, SMTP, enz.
 \\
 
+\subsection{Implementatie van TCP/IP stacks}
+Er zijn twee soorten TCP/IP stack implementaties; Een is de TCP/IP stack afgeleid van de BSD implementatie en de andere is een door de embedded systeem fabrikant zelf geimplementeerde versie.\\
+BSD is een besturingssysteem afgeleid van het UNIX besturingssysteem. BSD wordt nog weleens gebruikt op workstations en servers. Maar het was vroeger prominent aanwezig, doordat het zo prominent aanwezig was, hebben veel besturingssystemen zoals Linux met een kleine aanpassing de BSD implementatie voor de TCP/IP stack geadopteerd.
+\\
+Embedded systemen kunnen vaak door hardware limitaties niet de volledige BSD TCP/IP stack gebruiken. Om het toch werkend te krijgen op de hardware wordt de TCP/IP stack door de fabrikant van het embedded systeem versimpeld. Ondanks dat de TCP/IP stack versimpeld is, probeert de fabrikant toch de TCP/IP stack zoveel mogelijk compatibel te maken met de volledige TCP/IP stack die te vinden is in normale besturingssystemen. 
+\\
+De manier waarop de TCP/IP stack versimpeld kan worden, is het optimaliseren naar de hardware en software van het embedded systeem.
+\\\\
+Neem als voorbeeld een webserver:
+\\\\
+Een webserver is gebouwd met een simpele webinterface met alleen een paar knoppen erop. Deze implementatie heeft alleen de protcollen: HTTP, TCP, RARP, ARP en ICMP nodig. Protocollen zoals FTP en SNMP zijn in deze implementatie niet nodig. Deze protocollen kunnen dan ook verwijderd worden uit de broncode om betere prestaties en een kleinere geheugen footprint te creeren.
+
+
+\section{Sockets}
+Sockets zijn vaak onderdeel van een TCP/IP stack API die het mogelijk maakt om met behulp van de TCP/IP stack een directe TCP of UDP verbinding te maken met een andere host. Ook socket API's zijn vaak afgeleid van de BSD implementatie, maar het kan ook een custom implementatie zijn gemaakt door de fabrikant van het embedded systeem. 
+\\\\
+Een socket bestaat uit een IP-adres en een poort nummer. Sockets hebben geen bron adres nodig, standaard zijn sockets geconfigureerd om alleen te sturen en niet te ontvangen. Om toch data te ontvangen, kan een socket zichzelf vastmaken(binden) aan een lokaal adres.
 \end{document}

@@ -4,13 +4,38 @@
 Dit hoofdstuk licht de onderzoeksmethode en testopstelling toe. 
 
 \section{ESP32}
-Het platform wat onderzocht wordt is de ESP32. De ESP32 is een microcontroller van de Chinese fabrikant Espressif.\\ De microcontroller bevat een WiFi en Bluetooth (met ble) peripheral die met behulp van de open source sdk aangestuurd kan worden. De ESP32 is een veelgebruikte microcontroller in de hobbyscene. Dit komt voornamelijk door de goede ondersteuning voor de arduino sdk en de ingebouwde WiFi peripheral.
+Het platform dat onderzocht wordt is de ESP32. De ESP32 is een microcontroller van de Chinese fabrikant Espressif.\\ De microcontroller bevat een WiFi en Bluetooth (met ble) peripheral die met behulp van de open source sdk aangestuurd kan worden. De ESP32 is een veelgebruikte microcontroller in de hobbyscene. Dit komt voornamelijk door de goede ondersteuning voor de arduino sdk en de ingebouwde WiFi peripheral.
 \\\\
 Andere redenenen voor de populariteit van deze microcontroller zijn:\\
 - De twee xTensa lx6 kernen\\
 - 4 MB flash (uitbreidbaar tot 16MB met een SPI flash chip)\\
-- Freertos ondersteuning\\\\
-Dit onderzoek gaat zich richten op de WiFi peripheral met het Iperf voorbeeld uit de SDK. Dit voorbeeld heeft een vrijwel complete implementatie van Iperf v2. 
+- 320Kb ram\\
+- Freertos ondersteuning\\
+- Cryptographische functies voor hardware acceleratie van de tcp/ip stack en beveiligingsalgorithmen\\
+- Zowel in module vorm als losse chip leverbaar.\\\\
+Dit onderzoek zal gebruik maken van een ESP32 development board, het ESP32 development board heeft alle randcomponenten benodigd om de chip te programmeren en voeden. \\
+
+\section{TCP/IP stack en Programmeer platformen}
+Het platform heeft verschillende soorten tcp/ip stacks en programmeer platformen. Zo zijn er programmeer platformen als: Mongoose os, Zerynth, NodeMCU en ESP-IDF met freertos.\\ Het platform wat gekozen is voor dit onderzoek is ESP-IDF met freertos. 
+\\Bij dit platform zit een tcp/ip stack meegeleverd, de tcp/ip stack die is meegeleverd is een aangepaste versie van de lwIP(lightweight tcp/ip stack) tcp/ip stack. 
+\\De aanpassingen zijn gedaan door de fabrikant zijn om lwIP beter te integreren in de bestaande software van de ESP-IDF SDK. 
+\\Voorbeelden van modificaties die zijn aangebracht aan de lwip library zijn onder andere: \\\\
+- Het thread safe maken van sockets\\
+- Timers uitzetten als er geen gebruik van wordt gemaaakt of als er een timeout situatie optreed\\
+- IPV4 en IPV6 multicast socket opties toevoegen\\
+- Het toevoegen van aan IPV4 gekoppelde IPV6 adressen\\
+- Het toevoegen van geadvanceerde configureerbare hooks aan het build systeem.\\\\
+Naast dat de ESP32 een tcp/ip stack gebruikt, gebruikt de andere host waarmee de ESP32 verbindt ook een TCP/IP stack. Bij dit onderzoek is de andere host een PC met een Manjaro Linux variant. Deze host maakt gebruik van de Linux Kernel TCP/IP stack. Deze TCP/IP stack is een direct afgeleide versie van de BSD TCP/IP stack en ondersteunt ook de volledige BSD TCP/IP stack. Ook in het linux ecosysteem zijn er andere opties voor TCP/IP stack, zoals PF_RING, Snabbswitch, DPDK en Netmap. Om praktische redenen wordt er in dit onderzoek gebruik gemaakt van de standaard met linux meegeleverde Linux kernel tcp/ip stack. \\
+De compiler die gebruikt wordt in dit onderzoek voor de ESP32 is de Xtensa ESP32 GCC compiler (2021r2-8.4.0). In het build systeem is er gebruik gemaakt van CMake(3.20.3) en Ninja(1.10.2).\\
+De compiler die gebruikt wordt in dit onderzoek op de PC is GCC(12.2.0). In het build systeem is er gebruikt gemaakt van cmake(3.24.3) en ninja(1.11.1). Voor scripting wordt er gebruik gemaakt van Python(3.10.8).
+
+\section{iperf}
+Om op een industriestandaard wijze te kunnen testen wordt er gebruik gemaakt van het programma Iperf om de bandbreedte testen uit te kunnen voeren.\\
+Deze manier van testen kan het hele systeem (WiFi peripheral, memory management en tcp/ip stack) testen. Bovendien heeft iperf opties om package sizes, window sizes en andere variabelen gebruikt in dit onderzoek aan te kunnen passen. Om Iperf te kunnen gebruiken op de ESP32 wordt er gebruik gemaakt van het Iperf voorbeeld geleverd door de fabrikant. Dit voorbeeld levert een vrijwel complete implementatie van Iperf v2.\\\\
+Iperf werkt door een verbinding tussen twee hosts te maken met tcp of udp sockets en vervolgens pakketten met een vaste grootte over deze verbinding te sturen gedurende een bepaalde tijd. De tijd is instelbaar en is normaal 10 seconden. In deze 10 seconden houdt het programma bij hoeveel pakketten er verstuurd zijn en bepaald hieruit wat de bandbreedte is van de verbinding.\\
+
+\section{externe factoren}
+
 \section{Testopstelling}
 
 

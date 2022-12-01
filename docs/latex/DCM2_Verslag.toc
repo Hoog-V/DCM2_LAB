@@ -12,7 +12,8 @@
 \contentsline {subsection}{\numberline {3.2.1}Implementatie van TCP/IP stacks}{5}{}%
 \contentsline {section}{\numberline {3.3}Sockets}{6}{}%
 \contentsline {chapter}{\numberline {4}Onderzoeksmethode}{7}{}%
-\contentsline {section}{\numberline {4.1}Aanpak}{7}{}%
+\contentsline {section}{\numberline {4.1}ESP32}{7}{}%
+\contentsline {section}{\numberline {4.2}Testopstelling}{7}{}%
 \contentsline {chapter}{\numberline {5}Onderzoek}{8}{}%
 \contentsline {section}{\numberline {5.1}Aanpak}{8}{}%
 \contentsline {chapter}{\numberline {6}Resultaten en Conclusies}{9}{}%

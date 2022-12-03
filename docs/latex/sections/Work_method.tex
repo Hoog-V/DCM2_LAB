@@ -25,17 +25,29 @@ Het platform heeft verschillende soorten tcp/ip stacks en programmeer platformen
 - IPV4 en IPV6 multicast socket opties toevoegen\\
 - Het toevoegen van aan IPV4 gekoppelde IPV6 adressen\\
 - Het toevoegen van geadvanceerde configureerbare hooks aan het build systeem.\\\\
-Naast dat de ESP32 een tcp/ip stack gebruikt, gebruikt de andere host waarmee de ESP32 verbindt ook een TCP/IP stack. Bij dit onderzoek is de andere host een PC met een Manjaro Linux variant. Deze host maakt gebruik van de Linux Kernel TCP/IP stack. Deze TCP/IP stack is een direct afgeleide versie van de BSD TCP/IP stack en ondersteunt ook de volledige BSD TCP/IP stack. Ook in het linux ecosysteem zijn er andere opties voor TCP/IP stack, zoals PF_RING, Snabbswitch, DPDK en Netmap. Om praktische redenen wordt er in dit onderzoek gebruik gemaakt van de standaard met linux meegeleverde Linux kernel tcp/ip stack. \\
+Naast dat de ESP32 een tcp/ip stack gebruikt, gebruikt de andere host waarmee de ESP32 verbindt ook een TCP/IP stack. Bij dit onderzoek is de andere host een PC met een Manjaro Linux variant. Deze host maakt gebruik van de Linux Kernel TCP/IP stack. Deze TCP/IP stack is een direct afgeleide versie van de BSD TCP/IP stack en ondersteunt ook de volledige BSD TCP/IP stack. Ook in het linux ecosysteem zijn er andere opties voor TCP/IP stack, zoals PF-RING, Snabbswitch, DPDK en Netmap. Om praktische redenen wordt er in dit onderzoek gebruik gemaakt van de standaard met linux meegeleverde Linux kernel tcp/ip stack. \\
 De compiler die gebruikt wordt in dit onderzoek voor de ESP32 is de Xtensa ESP32 GCC compiler (2021r2-8.4.0). In het build systeem is er gebruik gemaakt van CMake(3.20.3) en Ninja(1.10.2).\\
-De compiler die gebruikt wordt in dit onderzoek op de PC is GCC(12.2.0). In het build systeem is er gebruikt gemaakt van cmake(3.24.3) en ninja(1.11.1). Voor scripting wordt er gebruik gemaakt van Python(3.10.8).
-
+De compiler die gebruikt wordt in dit onderzoek op de PC is GCC(12.2.0). In het build systeem is er gebruikt gemaakt van cmake(3.24.3) en ninja(1.11.1). Voor scripting wordt er gebruik gemaakt van Python(3.10.8).\\
 \section{iperf}
 Om op een industriestandaard wijze te kunnen testen wordt er gebruik gemaakt van het programma Iperf om de bandbreedte testen uit te kunnen voeren.\\
 Deze manier van testen kan het hele systeem (WiFi peripheral, memory management en tcp/ip stack) testen. Bovendien heeft iperf opties om package sizes, window sizes en andere variabelen gebruikt in dit onderzoek aan te kunnen passen. Om Iperf te kunnen gebruiken op de ESP32 wordt er gebruik gemaakt van het Iperf voorbeeld geleverd door de fabrikant. Dit voorbeeld levert een vrijwel complete implementatie van Iperf v2.\\\\
 Iperf werkt door een verbinding tussen twee hosts te maken met tcp of udp sockets en vervolgens pakketten met een vaste grootte over deze verbinding te sturen gedurende een bepaalde tijd. De tijd is instelbaar en is normaal 10 seconden. In deze 10 seconden houdt het programma bij hoeveel pakketten er verstuurd zijn en bepaald hieruit wat de bandbreedte is van de verbinding.\\
-
-\section{externe factoren}
-
+\section{Negatieve factoren}
+Er zijn verschillende factoren die de performance van de tcp/ip stack negatief kunnen beïnvloeden. Voorbeelden van deze factoren zijn ruis over het medium, de snelheid van de interne communicatiebus tussen de PHY en de microcontroller, de snelheid van het geheugen en het antenne ontwerp van de WiFi controller.\\\\
+Espressif, de fabrikant van de ESP32 heeft dezelfde testen uitgevoerd (als dit onderzoek) met behulp van Iperf. Waarbij de testen in zowel een open ruimte als in een afgeschermde (shielded) doos (samen met de access point) zijn uitgevoerd. Uit de resultaten zijn duidelijk af te leiden dat ruis en andere externe factoren een grote invloed hebben op de performance van de WiFi verbinding en daarmee ook de TCP/IP stack.\\
+\begin{figure}[h]
+\begin{tabular}{||l|c|r|p{6cm}||}
+	 \hline
+ 	 Type & Air in lab & Shielded box & Test tool \\
+  	 \hline \hline    
+   	 UDP RX & 30 MBit/s & 85 MBit/s & iperf example \\
+   	 UDP TX & 30 MBit/s & 75 MBit/s & iperf example \\
+   	 TCP RX & 20 MBit/s & 65 MBit/s & iperf example \\
+   	 TCP TX & 20 MBit/s & 75 MBit/s & iperf example \\
+\end{tabular}
+\caption{ESP32 Wi-Fi Throughput according to Espressif}
+\end{figure}
+\\Dit onderzoek zal zich alleen richten op open lucht testen of zoals in het tabel hierboven benoemd Air in lab. Met de Wi-Fi access point naast de ESP32 en de PC bekabeld verbonden met de Wi-Fi accesspoint. Om de externe invloeden zoals ruis te beperken.
 \section{Testopstelling}
 
 

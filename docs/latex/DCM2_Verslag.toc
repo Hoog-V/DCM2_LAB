@@ -17,11 +17,12 @@
 \contentsline {section}{\numberline {4.3}iperf}{9}{}%
 \contentsline {section}{\numberline {4.4}Negatieve factoren}{10}{}%
 \contentsline {section}{\numberline {4.5}Testopstelling}{11}{}%
-\contentsline {chapter}{\numberline {5}Onderzoek}{12}{}%
-\contentsline {section}{\numberline {5.1}Aanpak}{12}{}%
-\contentsline {chapter}{\numberline {6}Resultaten en Conclusies}{13}{}%
-\contentsline {section}{\numberline {6.1}Aanpak}{13}{}%
-\contentsline {chapter}{\numberline {7}Bronnen}{14}{}%
-\contentsline {section}{\numberline {7.1}Aanpak}{14}{}%
-\contentsline {chapter}{\numberline {8}Bijlagen}{15}{}%
-\contentsline {section}{\numberline {8.1}Aanpak}{15}{}%
+\contentsline {section}{\numberline {4.6}Testscript}{12}{}%
+\contentsline {chapter}{\numberline {5}Onderzoek}{13}{}%
+\contentsline {section}{\numberline {5.1}Aanpak}{13}{}%
+\contentsline {chapter}{\numberline {6}Resultaten en Conclusies}{14}{}%
+\contentsline {section}{\numberline {6.1}Aanpak}{14}{}%
+\contentsline {chapter}{\numberline {7}Bronnen}{15}{}%
+\contentsline {section}{\numberline {7.1}Aanpak}{15}{}%
+\contentsline {chapter}{\numberline {8}Bijlagen}{16}{}%
+\contentsline {section}{\numberline {8.1}Aanpak}{16}{}%

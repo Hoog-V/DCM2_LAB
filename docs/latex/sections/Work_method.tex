@@ -14,7 +14,7 @@ Andere redenenen voor de populariteit van deze microcontroller zijn:\\
 - Cryptographische functies voor hardware acceleratie van de tcp/ip stack en beveiligingsalgorithmen\\
 - Zowel in module vorm als losse chip leverbaar.\\\\
 Dit onderzoek zal gebruik maken van een ESP32 development board, het ESP32 development board heeft alle randcomponenten benodigd om de chip te programmeren en voeden. \\
-
+\newcommand{\sectionbreak}{\clearpage}
 \section{TCP/IP stack en Programmeer platformen}
 Het platform heeft verschillende soorten tcp/ip stacks en programmeer platformen. Zo zijn er programmeer platformen als: Mongoose os, Zerynth, NodeMCU en ESP-IDF met freertos.\\ Het platform wat gekozen is voor dit onderzoek is ESP-IDF met freertos. 
 \\Bij dit platform zit een tcp/ip stack meegeleverd, de tcp/ip stack die is meegeleverd is een aangepaste versie van de lwIP(lightweight tcp/ip stack) tcp/ip stack. 
@@ -31,7 +31,15 @@ De compiler die gebruikt wordt in dit onderzoek op de PC is GCC(12.2.0). In het 
 \section{iperf}
 Om op een industriestandaard wijze te kunnen testen wordt er gebruik gemaakt van het programma Iperf om de bandbreedte testen uit te kunnen voeren.\\
 Deze manier van testen kan het hele systeem (WiFi peripheral, memory management en tcp/ip stack) testen. Bovendien heeft iperf opties om package sizes, window sizes en andere variabelen gebruikt in dit onderzoek aan te kunnen passen. Om Iperf te kunnen gebruiken op de ESP32 wordt er gebruik gemaakt van het Iperf voorbeeld geleverd door de fabrikant. Dit voorbeeld levert een vrijwel complete implementatie van Iperf v2.\\\\
-Iperf werkt door een verbinding tussen twee hosts te maken met tcp of udp sockets en vervolgens pakketten met een vaste grootte over deze verbinding te sturen gedurende een bepaalde tijd. De tijd is instelbaar en is normaal 10 seconden. In deze 10 seconden houdt het programma bij hoeveel pakketten er verstuurd zijn en bepaald hieruit wat de bandbreedte is van de verbinding.\\
+Iperf werkt door een verbinding tussen twee hosts te maken met tcp of udp sockets en vervolgens pakketten met een vaste grootte over deze verbinding te sturen gedurende een bepaalde tijd. De tijd is instelbaar en is normaal 10 seconden. In deze 10 seconden houdt het programma bij hoeveel pakketten er verstuurd zijn (en goed ontvangen) en bepaald hieruit wat de bandbreedte is van de verbinding.\\
+\begin{figure}[h]
+\includegraphics[scale=0.6]{Iperf_diagram_esp_as_server}
+\caption{Iperfs werking met ESP32 als server}
+\end{figure}
+\begin{figure}[h]
+\includegraphics[scale=0.6]{Iperf_diagram_Desktop_as_server}
+\caption{Iperfs werking met ESP32 als client}
+\end{figure}
 \section{Negatieve factoren}
 Er zijn verschillende factoren die de performance van de tcp/ip stack negatief kunnen beïnvloeden. Voorbeelden van deze factoren zijn ruis over het medium, de snelheid van de interne communicatiebus tussen de PHY en de microcontroller, de snelheid van het geheugen en het antenne ontwerp van de WiFi controller.\\\\
 Espressif, de fabrikant van de ESP32 heeft dezelfde testen uitgevoerd (als dit onderzoek) met behulp van Iperf. Waarbij de testen in zowel een open ruimte als in een afgeschermde (shielded) doos (samen met de access point) zijn uitgevoerd. Uit de resultaten zijn duidelijk af te leiden dat ruis en andere externe factoren een grote invloed hebben op de performance van de WiFi verbinding en daarmee ook de TCP/IP stack.\\
@@ -45,10 +53,16 @@ Espressif, de fabrikant van de ESP32 heeft dezelfde testen uitgevoerd (als dit o
    	 TCP RX & 20 MBit/s & 65 MBit/s & iperf example \\
    	 TCP TX & 20 MBit/s & 75 MBit/s & iperf example \\
 \end{tabular}
-\caption{ESP32 Wi-Fi Throughput according to Espressif}
+\caption{ESP32 Wi-Fi Throughput volgens Espressif}
 \end{figure}
 \\Dit onderzoek zal zich alleen richten op open lucht testen of zoals in het tabel hierboven benoemd Air in lab. Met de Wi-Fi access point naast de ESP32 en de PC bekabeld verbonden met de Wi-Fi accesspoint. Om de externe invloeden zoals ruis te beperken.
-\section{Testopstelling}
 
+\section{Testopstelling}
+Om het onderzoek repetitief onder dezelfde condities uit te kunnen voeren is er een testopstelling opgemaakt. Deze testopstelling bestaat uit een ESP32, een Wi-Fi router en een Desktop PC met een variant van linux. De desktop pc is bedraad verbonden met de Wi-Fi router en de ESP32 draadloos. De Wi-Fi router die gebruikt wordt is een Fritzbox 7390, dit modem heeft een theoretische throughput van 300Mbps (Wireless N), dit is voldoende voor de ESP32 die een theoretisch haalbare snelheid heeft van 54Mbps (Wireless G). Hieronder is de testopstelling geillustreerd in een diagram:
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{Network_topology_test}
+\caption{Testopstelling schematisch uitgedrukt}
+\end{figure}
 
 \end{document}

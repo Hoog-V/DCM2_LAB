@@ -2,8 +2,29 @@
 \begin{document}
 
 
-\section{Resultaten}
+\section{Uitgevoerd onderzoek}
+Er zijn drie soorten (deel)onderzoeken gedaan:\\
+\-/ Wat is de maximale bandbreedte van de ESP32 bij de standaard Iperf instellingen (Baseline).\\
+\-/ Welke window size geeft de hoogste bandbreedte\\
+\-/ Welke package size geeft de hoogste bandbreedte\\
+De paragrafen van dit hoofdstuk geven de resultaten van elk onderzoek met een korte samenvatting van de uitvoering van het onderzoek.
+\clearpage
 \subsection{Baseline}
+In dit (deel)onderzoek is de bandbreedte onderzocht bij de standaard instellingen van Iperf. \\
+De commando's gebruikt om deze resultaten te behalen zijn:\\
+\begin{center}
+\begin{tabular}{||l|l|l|}
+   	 Testsoort & ESP32 Iperf commando & PC Iperf commando\\
+   	 \hline \hline    
+   	 UDP RX & iperf \-/ u \-/ s & iperf \-/ u \-/ c ESP32\_IP \\
+   	 UDP TX & iperf \-/ u \-/ c PC\_IP & iperf \-/ u \-/ s \\
+   	 TCP RX & iperf \-/ s & iperf \-/ c ESP32\_IP  \\
+   	 TCP TX & iperf \-/ c PC\_IP & iperf \-/ s \\   	 
+   	 \hline
+	\end{tabular}
+\end{center}
+De testopstelling is onveranderd en bestaat nog steeds uit een PC, ESP32 en een WiFi accespoint.\\
+Elke test is 3 keer uitgevoerd en het gemiddelde resultaat is hieronder in een tabel en grafiek uitgezet.\\
 \begin{tabular}{||l|l||}
    	 Testsoort & Bandbreedte \\ & (Mbits/sec)\\
    	 \hline \hline    
@@ -13,7 +34,7 @@
    	 TCP RX & 46.87\\
    	 \hline
 	\end{tabular}
- \begin{tikzpicture}[baseline=(current axis.outer east)]
+ \begin{tikzpicture}[baseline=(current axis.outer west)]
 \begin{axis}  
 [  
     ybar,  
@@ -28,10 +49,24 @@
 \addplot coordinates {(UDP-RX, 1.07) (UDP-TX, 56.83) (TCP-TX,49.64) (TCP-RX,46.87)};  
   
 \end{axis}  
-\end{tikzpicture}  
+\end{tikzpicture} 
+ \clearpage
 \subsection{Window sizes}
-
+In dit (deel)onderzoek is de bandbreedte onderzocht bij de verschillende window sizes met behulp van Iperf. \\
+De commando's gebruikt om deze resultaten te behalen zijn:\\
+\begin{center}
+\begin{tabular}{||l|l|l|}
+   	 Testsoort & ESP32 Iperf commando & PC Iperf commando\\
+   	 \hline \hline    
+   	 Window size (ESP32 server) & iperf \-/ s & iperf \-/ c ESP32\_IP \-/W Window\_size\\
+   	 Window size (PC server) & iperf \-/ c PC\_IP & iperf \-/ s \-/W Window\_size \\
+   	 \hline
+	\end{tabular}
+\end{center}
+De testopstelling is onveranderd en bestaat nog steeds uit een PC, ESP32 en een WiFi accespoint.\\
+Elke test is 3 keer uitgevoerd en de gemiddelde resultaten zijn hieronder in een tabel en grafiek uitgezet.\\
 \subsubsection{Window sizes test met ESP32 als server}
+Bij deze test wordt de bandbreedte gemeten met varierende window sizes waarbij de ESP32 als server en PC als client wordt gebruikt.\\
 	\begin{tabular}{||l | l||}
    	 Window size(Kbytes) & Bandbreedte\\ 
    	                     & (Mbits/sec)\\
@@ -69,8 +104,9 @@
 	};
 \end{axis}
 \end{tikzpicture}
-
-\subsubsection{Window sizes test met ESP32 als client}
+\clearpage
+\subsubsection{Window sizes test met PC als server}
+Bij deze test wordt de bandbreedte gemeten met varierende window sizes waarbij de ESP32 als client en PC als server wordt gebruikt.\\
 	\begin{tabular}{||l | l||}
    	 Window size(Kbytes) & Bandbreedte\\ 
    	                     & (Mbits/sec)\\
@@ -108,11 +144,25 @@
 	};
 \end{axis}
 \end{tikzpicture}
-
+\clearpage
 \subsection{Package sizes}
-
-
+In dit (deel)onderzoek is de bandbreedte onderzocht bij de verschillende package sizes met behulp van Iperf. \\
+De commando's gebruikt om deze resultaten te behalen zijn:\\
+\begin{center}
+\begin{tabular}{||l|l|l|}
+   	 Testsoort & ESP32 Iperf commando & PC Iperf commando\\
+   	 \hline \hline    
+   	 Window size (ESP32 server) & iperf \-/ s & iperf \-/ c ESP32\_IP \-/M MSS\_size\\
+   	 Window size (PC server) & iperf \-/ c PC\_IP & iperf \-/ s \-/M MSS\_size \\
+   	 \hline
+	\end{tabular}
+\end{center}
+In de testen die uitgevoerd zijn, is de package size bepaald met behulp van de MSS grootte. MSS staat voor Max Segment Size en is het maximale formaat van het segment dat de NIC of PHY over het medium stuurt. \\
+Of het ook daadwerkelijk het formaat is wat aangegeven wordt in de opties van het Iperf commando, is geen gegeven. De NIC of PHY kan afhankelijk van de fabrikant toch nog een andere MSS kiezen.\\
+De testopstelling is onveranderd en bestaat nog steeds uit een PC, ESP32 en een WiFi accespoint.\\
+Elke test is 3 keer uitgevoerd en de gemiddelde resultaten zijn hieronder in een tabel en grafiek uitgezet.\\
 \subsubsection{Package sizes test met ESP32 als server}
+Bij deze test wordt de bandbreedte gemeten met varierende package sizes waarbij de ESP32 als server en PC als client wordt gebruikt.\\
 	\begin{tabular}{||l | l||}
    	 Package size(bytes) & Bandbreedte\\ 
    	                     & (Mbits/sec)\\
@@ -148,8 +198,9 @@
 	};
 \end{axis}
 \end{tikzpicture}
-
+\clearpage
 \subsubsection{Package sizes test met ESP32 als client}
+Bij deze test wordt de bandbreedte gemeten met varierende package sizes waarbij de ESP32 als client en PC als server wordt gebruikt.\\
 	\begin{tabular}{||l | l||}
    	 Package size(bytes) & Bandbreedte\\ 
    	                     & (Mbits/sec)\\

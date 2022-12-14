@@ -5,7 +5,14 @@
 \usepackage{titlesec}
 \usepackage[shortcuts]{extdash}
 \usepackage{wrapfig}
-\usepackage{multicol}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[
+backend=biber,
+style=apa,
+]{biblatex}
+\addbibresource{sample.bib}
+
 \graphicspath{ {../figures/} }
 \usepackage{subfiles}
 \title{DCM2 LAB: Performance van ESP32 TCP/IP stack}
@@ -56,9 +63,11 @@
   \chapter{Onderzoek}
   \subfile{sections/Executed_search}
   \chapter{Resultaten en Conclusies}
-  \subfile{sections/Results_and_conclusions}
-  \chapter{Bronnen}
-  \subfile{sections/References}
+  \subfile{sections/Results_and_conclusions}] 
   \chapter{Bijlagen}
   \subfile{sections/Appendixes}
+  \printbibliography[
+	heading=bibintoc,
+	title={Bronnen}
+	]
 \end{document}

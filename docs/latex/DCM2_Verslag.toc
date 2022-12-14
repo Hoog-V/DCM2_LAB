@@ -1,3 +1,4 @@
+\babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Versiegeschiedenis}{}{}%
 \contentsline {chapter}{\numberline {2}Introductie}{1}{}%
 \contentsline {section}{\numberline {2.1}Doel en motivatie}{1}{}%
@@ -34,7 +35,6 @@
 \contentsline {subsection}{\numberline {6.1.1}Overhead}{19}{}%
 \contentsline {subsection}{\numberline {6.1.2}Encapsulatie en Decapsulatie}{20}{}%
 \contentsline {section}{\numberline {6.2}Conclusie}{21}{}%
-\contentsline {chapter}{\numberline {7}Bronnen}{22}{}%
+\contentsline {chapter}{\numberline {7}Bijlagen}{22}{}%
 \contentsline {section}{\numberline {7.1}Aanpak}{22}{}%
-\contentsline {chapter}{\numberline {8}Bijlagen}{23}{}%
-\contentsline {section}{\numberline {8.1}Aanpak}{23}{}%
+\contentsline {chapter}{Bronnen}{23}{}%

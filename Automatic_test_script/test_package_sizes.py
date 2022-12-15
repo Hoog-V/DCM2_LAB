@@ -1,9 +1,11 @@
 import serial
 import subprocess
-
+import time
+import logging
+import threading
 #WiFi configuration
-WiFi_SSID = 'SSID'
-WiFi_Password = "PASSWORD"
+WiFi_SSID = 'TestAP'
+WiFi_Password = "TestPassword"
 
 # Needles for finding esp ip-addr in UART response
 ip_search_str = "sta ip:"
@@ -16,10 +18,14 @@ result_end_str = "bits/sec"
 # Setup command for initiating WiFi
 Setup_CMD = "sta "+WiFi_SSID+" "+ WiFi_Password +"\r"
 
-Initiate_server_CMD = "iperf -s\r"
+Initiate_server_CMD = "iperf -s -w "
 
-def init_esp_iperf_server(s):
-    s.write(Initiate_server_CMD.encode())
+Package_size_step = 10000
+
+Read_buff_size = 200
+
+def init_esp_iperf_server(s, window_size):
+    s.write((Initiate_server_CMD+str(window_size)+"\r").encode())
 
 def run_local_iperf_instance(server_ip_addr, options):
     proc = subprocess.Popen(["iperf -c "+server_ip_addr+" "+options], stdout=subprocess.PIPE, shell=True)
@@ -35,14 +41,19 @@ def find_substring(src_str, begin_str, end_str):
     
 def init_esp_wifi(ser):
     ser.write(Setup_CMD.encode())
+    print("Initializing ESP-Wifi..", end='')
     read_buffer_str = ""
     while(read_buffer_str.__contains__(", mask") == False):
-          read_buffer = ser.read(200)
+          read_buffer = ser.read(Read_buff_size)
           read_buffer_str = read_buffer.decode('utf-8')
-          print("Esp still has no ip")
+          print('.', end='')
+    time.sleep(2) #Wait for the ESP32 to initialize wifi connection, takes approximately 2 secs
     return find_substring(read_buffer_str, ip_search_str, ip_search_end_str)     
        
-       
+def reset_esp32(ser):
+    ser.write("restart\r".encode())
+    ser.flushOutput()
+    time.sleep(5) #Wait for the ESP32 to restart, takes approximately 5 secs
        
 def main():
     ser = serial.Serial(
@@ -60,19 +71,22 @@ def main():
         
             # Total number of bits to be read
             bytesize=serial.EIGHTBITS,
- 
             # Number of serial commands to accept before timing out
-            timeout=1
+            timeout=0
     )
-    server_ip_addr = init_esp_wifi(ser)
-    print(server_ip_addr)
     file1 = open("log.txt", "w")
-    for i in range(0,5):
-        init_esp_iperf_server(ser)
-        outputstr = run_local_iperf_instance(server_ip_addr, "-t 5")
+    for step in range(1,11):
+        time.sleep(.1)
+        reset_esp32(ser)
+        server_ip_addr = init_esp_wifi(ser)
+        print(server_ip_addr)
+        package_size = Package_size_step*step
+        init_esp_iperf_server(ser, package_size)
+        outputstr = run_local_iperf_instance(server_ip_addr, " -w "+str(package_size)+" -t 5")
         print(outputstr)
         result = find_substring(outputstr, result_begin_str, result_end_str)
         file1.write(result+"\n")
+        file1.write(str(package_size)+"\n")
     file1.close()
 
         

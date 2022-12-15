@@ -2799,22 +2799,12 @@
     <bcf:citekey order="6">wang</bcf:citekey>
     <bcf:citekey order="7">wang</bcf:citekey>
     <bcf:citekey order="8">lwip</bcf:citekey>
-    <bcf:citekey order="9">esptechref</bcf:citekey>
-    <bcf:citekey order="10">espressiflwip</bcf:citekey>
-    <bcf:citekey order="11">cloudflaretcpip</bcf:citekey>
-    <bcf:citekey order="12">espressifperformance</bcf:citekey>
-    <bcf:citekey order="13">esptechref</bcf:citekey>
-    <bcf:citekey order="14">esptechref</bcf:citekey>
-    <bcf:citekey order="15">DAC99</bcf:citekey>
-    <bcf:citekey order="16">jacob</bcf:citekey>
-    <bcf:citekey order="17">mckboskarqua</bcf:citekey>
-    <bcf:citekey order="18">dunkels</bcf:citekey>
-    <bcf:citekey order="19">wang</bcf:citekey>
-    <bcf:citekey order="20">lwip</bcf:citekey>
-    <bcf:citekey order="21">esptechref</bcf:citekey>
-    <bcf:citekey order="22">espressiflwip</bcf:citekey>
-    <bcf:citekey order="23">cloudflaretcpip</bcf:citekey>
-    <bcf:citekey order="24">espressifperformance</bcf:citekey>
+    <bcf:citekey order="9">DAC99</bcf:citekey>
+    <bcf:citekey order="10">jacob</bcf:citekey>
+    <bcf:citekey order="11">mckboskarqua</bcf:citekey>
+    <bcf:citekey order="12">dunkels</bcf:citekey>
+    <bcf:citekey order="13">wang</bcf:citekey>
+    <bcf:citekey order="14">lwip</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
@@ -2857,13 +2847,4 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
-  <bcf:datalist section="0"
-                name="apa/global//global/global"
-                type="entry"
-                sortingtemplatename="apa"
-                sortingnamekeytemplatename="global"
-                labelprefix=""
-                uniquenametemplatename="global"
-                labelalphanametemplatename="global">
-  </bcf:datalist>
 </bcf:controlfile>

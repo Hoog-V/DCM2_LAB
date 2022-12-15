@@ -1,0 +1,106 @@
+   	 4 KB:
+0-   3 sec       39.64 Mbits/sec
+3-   6 sec       38.99 Mbits/sec
+6-   9 sec       39.07 Mbits/sec
+	 
+0-   3 sec       40.70 Mbits/sec
+3-   6 sec       40.13 Mbits/sec
+6-   9 sec       40.25 Mbits/sec  	 
+   	 
+0-   3 sec       34.66 Mbits/sec
+3-   6 sec       36.54 Mbits/sec
+6-   9 sec       36.82 Mbits/sec	 
+AVG: 38.53 Mbits/sec
+   	 
+   	 8 KB:
+0-   3 sec       36.85 Mbits/sec
+3-   6 sec       35.96 Mbits/sec
+6-   9 sec       36.92 Mbits/se  	 
+   	 
+   0-   3 sec       38.01 Mbits/sec
+   3-   6 sec       37.84 Mbits/sec
+   6-   9 sec       37.52 Mbits/sec  	 
+   	
+   0-   3 sec       36.57 Mbits/sec
+   3-   6 sec       38.40 Mbits/sec
+   6-   9 sec       35.24 Mbits/sec   
+AVG: 37.12 Mbits/sec
+   	 
+   	 16 KB:
+    0-   3 sec       34.34 Mbits/sec
+   3-   6 sec       32.91 Mbits/sec
+   6-   9 sec       33.10 Mbits/sec
+   
+   0-   3 sec       35.28 Mbits/sec
+   3-   6 sec       36.95 Mbits/sec
+   6-   9 sec       37.82 Mbits/sec    	 
+   
+   0-   3 sec       36.61 Mbits/sec
+   3-   6 sec       37.88 Mbits/sec
+   6-   9 sec       38.70 Mbits/sec
+AVG: 35.95 Mbits/sec
+   	 32 KB:
+   0-   3 sec       39.85 Mbits/sec
+   3-   6 sec       38.96 Mbits/sec
+   6-   9 sec       39.87 Mbits/sec
+   
+    0-   3 sec       37.41 Mbits/sec
+   3-   6 sec       39.60 Mbits/sec
+   6-   9 sec       40.10 Mbits/sec
+   
+    0-   3 sec       40.21 Mbits/sec
+   3-   6 sec       39.95 Mbits/sec
+   6-   9 sec       39.93 Mbits/sec  	 
+AVG: 39.54 Mbits/sec
+   	 64 KB:
+   0-   3 sec       41.85 Mbits/sec
+   3-   6 sec       41.26 Mbits/sec
+   6-   9 sec       40.28 Mbits/sec
+   
+   0-   3 sec       41.98 Mbits/sec
+   3-   6 sec       42.68 Mbits/sec
+   6-   9 sec       42.33 Mbits/sec
+   
+   0-   3 sec       40.51 Mbits/sec
+   3-   6 sec       40.88 Mbits/sec
+   6-   9 sec       42.25 Mbits/sec	 
+AVG: 41.55 Mbits/sec
+   	 128 KB:
+      0-   3 sec       42.77 Mbits/sec
+   3-   6 sec       42.50 Mbits/sec
+   6-   9 sec       41.30 Mbits/sec
+   
+      0-   3 sec       43.06 Mbits/sec
+   3-   6 sec       42.84 Mbits/sec
+   6-   9 sec       43.07 Mbits/sec
+   
+      0-   3 sec       42.72 Mbits/sec
+   3-   6 sec       41.20 Mbits/sec
+   6-   9 sec       42.37 Mbits/sec
+AVG: 42.43 Mbits/sec  
+256 KB:
+   0-   3 sec       43.03 Mbits/sec
+   3-   6 sec       43.24 Mbits/sec
+   6-   9 sec       42.82 Mbits/sec
+   
+   0-   3 sec       42.98 Mbits/sec
+   3-   6 sec       43.39 Mbits/sec
+   6-   9 sec       43.72 Mbits/sec
+   
+   0-   3 sec       42.04 Mbits/sec
+   3-   6 sec       42.30 Mbits/sec
+   6-   9 sec       42.04 Mbits/sec
+AVG: 42.84 Mbits/sec
+400 KB:
+   0-   3 sec       40.67 Mbits/sec
+   3-   6 sec       40.74 Mbits/sec
+   6-   9 sec       41.16 Mbits/sec
+   
+   0-   3 sec       40.67 Mbits/sec
+   3-   6 sec       40.74 Mbits/sec
+   6-   9 sec       41.16 Mbits/sec
+   
+   0-   3 sec       40.56 Mbits/sec
+   3-   6 sec       41.28 Mbits/sec
+   6-   9 sec       41.85 Mbits/sec
+AVG: 40.98 Mbits/sec

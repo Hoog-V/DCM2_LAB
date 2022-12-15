@@ -11,6 +11,8 @@
 backend=biber,
 style=apa,
 ]{biblatex}
+\usepackage{listings}
+\usepackage{xcolor}
 \addbibresource{bronnen.bib}
 
 \graphicspath{ {../figures/} }
@@ -48,8 +50,6 @@ style=apa,
    	 12 & 11-12-22 & VH & Toevoegen testresultaten in H5\\
    	 
 	\end{tabular}
-
- 
   \newpage 
   \tableofcontents
   \newpage
@@ -63,7 +63,7 @@ style=apa,
   \chapter{Onderzoek}
   \subfile{sections/Executed_search}
   \chapter{Resultaten en Conclusies}
-  \subfile{sections/Results_and_conclusions}] 
+  \subfile{sections/Results_and_conclusions}
   \chapter{Bijlagen}
   \subfile{sections/Appendixes}
   \printbibliography[

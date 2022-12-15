@@ -31,7 +31,7 @@ De compiler die gebruikt wordt in dit onderzoek op de PC is GCC(12.2.0). In het 
 \section{Testmethode}
 \subsection{iperf}
 Om op een industriestandaard wijze te kunnen testen wordt er gebruik gemaakt van het programma Iperf om de bandbreedte testen uit te kunnen voeren.\\
-Deze manier van testen kan het hele systeem (WiFi peripheral, memory management en tcp/ip stack) testen. Bovendien heeft iperf opties om package sizes, window sizes en andere variabelen gebruikt in dit onderzoek aan te kunnen passen. Om Iperf te kunnen gebruiken op de ESP32 wordt er gebruik gemaakt van het Iperf voorbeeld geleverd door de fabrikant. Dit voorbeeld levert een vrijwel complete implementatie van Iperf v2.\\\\
+Deze manier van testen kan het hele systeem (WiFi peripheral, memory management en tcp/ip stack) testen. Bovendien heeft iperf opties om package sizes, window sizes en andere variabelen gebruikt in dit onderzoek aan te kunnen passen. Om Iperf te kunnen gebruiken op de ESP32 wordt er gebruik gemaakt van het Iperf voorbeeld geleverd door de fabrikant  \parencite{espiperfexample}. Dit voorbeeld levert een vrijwel complete implementatie van Iperf v2.\\\\
 Iperf werkt door een verbinding tussen twee hosts te maken met tcp of udp sockets en vervolgens pakketten met een vaste grootte over deze verbinding te sturen gedurende een bepaalde tijd. De tijd is instelbaar en is normaal 10 seconden. In deze 10 seconden houdt het programma bij hoeveel pakketten er verstuurd zijn (en goed ontvangen) en bepaald hieruit wat de bandbreedte is van de verbinding.\\
 \begin{figure}[h]
 \includegraphics[scale=0.6]{Iperf_diagram_esp_as_server}

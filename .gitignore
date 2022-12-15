@@ -1,0 +1,11 @@
+Iperf/build
+*.log
+*.aux
+*.blg
+*.bcf
+*.synctex.gz
+*.toc
+*.bbl
+*.xml
+
+

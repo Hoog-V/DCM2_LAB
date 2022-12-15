@@ -1,0 +1,94 @@
+import serial
+import subprocess
+import time
+import logging
+import threading
+#WiFi configuration
+WiFi_SSID = 'TestAP'
+WiFi_Password = "TestPassword"
+
+# Needles for finding esp ip-addr in UART response
+ip_search_str = "sta ip:"
+ip_search_end_str = ", mask"
+
+# Needles for finding bandwidth numbers in iperf output response
+result_begin_str = "Bytes  "
+result_end_str = "bits/sec"
+
+# Setup command for initiating WiFi
+Setup_CMD = "sta "+WiFi_SSID+" "+ WiFi_Password +"\r"
+
+Initiate_server_CMD = "iperf -s -w "
+
+Package_size_step = 10000
+
+Read_buff_size = 200
+
+def init_esp_iperf_server(s, window_size):
+    s.write((Initiate_server_CMD+str(window_size)+"\r").encode())
+
+def run_local_iperf_instance(server_ip_addr, options):
+    proc = subprocess.Popen(["iperf -c "+server_ip_addr+" "+options], stdout=subprocess.PIPE, shell=True)
+    (output, err) = proc.communicate()
+    outputstr = output.decode()
+    return outputstr
+
+
+def find_substring(src_str, begin_str, end_str):
+    index = src_str.index(begin_str) + len(begin_str)
+    index_stop = src_str.index(end_str)
+    return src_str[index:index_stop]
+    
+def init_esp_wifi(ser):
+    ser.write(Setup_CMD.encode())
+    print("Initializing ESP-Wifi..", end='')
+    read_buffer_str = ""
+    while(read_buffer_str.__contains__(", mask") == False):
+          read_buffer = ser.read(Read_buff_size)
+          read_buffer_str = read_buffer.decode('utf-8')
+          print('.', end='')
+    time.sleep(2) #Wait for the ESP32 to initialize wifi connection, takes approximately 2 secs
+    return find_substring(read_buffer_str, ip_search_str, ip_search_end_str)     
+       
+def reset_esp32(ser):
+    ser.write("restart\r".encode())
+    ser.flushOutput()
+    time.sleep(5) #Wait for the ESP32 to restart, takes approximately 5 secs
+       
+def main():
+    ser = serial.Serial(
+            # Serial Port to read the data from
+            port='/dev/ttyUSB0',
+ 
+            #Rate at which the information is shared to the communication channel
+            baudrate = 115200,
+   
+            #Applying Parity Checking (none in this case)
+            parity=serial.PARITY_NONE,
+ 
+           # Pattern of Bits to be read
+            stopbits=serial.STOPBITS_ONE,
+        
+            # Total number of bits to be read
+            bytesize=serial.EIGHTBITS,
+            # Number of serial commands to accept before timing out
+            timeout=0
+    )
+    file1 = open("log.txt", "w")
+    for step in range(1,11):
+        time.sleep(.1)
+        reset_esp32(ser)
+        server_ip_addr = init_esp_wifi(ser)
+        print(server_ip_addr)
+        package_size = Package_size_step*step
+        init_esp_iperf_server(ser, package_size)
+        outputstr = run_local_iperf_instance(server_ip_addr, " -w "+str(package_size)+" -t 5")
+        print(outputstr)
+        result = find_substring(outputstr, result_begin_str, result_end_str)
+        file1.write(result+"\n")
+        file1.write(str(package_size)+"\n")
+    file1.close()
+
+        
+if __name__=="__main__":
+    main()      

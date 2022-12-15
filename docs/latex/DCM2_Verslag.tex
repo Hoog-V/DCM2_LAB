@@ -1,0 +1,72 @@
+\documentclass{report}
+\usepackage{pgfplots} 
+\pgfplotsset{width=8cm,compat=1.7}  
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage[shortcuts]{extdash}
+\usepackage{wrapfig}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[
+backend=biber,
+style=apa,
+]{biblatex}
+\addbibresource{sample.bib}
+
+\graphicspath{ {../figures/} }
+\usepackage{subfiles}
+\title{DCM2 LAB: Performance van ESP32 TCP/IP stack}
+\author{\null}
+\date{ \begin{tabular}{r@{ }l}
+  		  Auteur:      & Victor Hogeweij \\[1ex] 
+		  Docenten: & Ruud Elsinghorst\\
+          			   & Remko Welling\\[1ex]
+          Klas:		   & ESE-2A\\[1ex]
+          Instituut:   & Hogeschool Arnhem-Nijmegen          
+\end{tabular}}
+\begin{document}
+  \pagenumbering{gobble}
+
+  \maketitle
+
+  \newpage
+  \chapter{Versiegeschiedenis}
+	\begin{tabular}{||l|c|r|p{6cm}||}
+   	 Versie & Datum & Persoon & Notitie/verandering \\
+   	 \hline \hline    
+   	 1 & 20-11-22 & VH & Opzet verslag \\
+   	 2 & 24-11-22 & VH & Toevoegen hoofdstukken \\
+   	 3 & 26-11-22 & VH & Introductie schrijven \\
+   	 4 & 26-11-22 & VH & Schrijven van Introductie en opzet achtergrond \\
+   	 5 & 27-11-22 & VH & Schrijven van sectie TCP/IP stacks \\
+   	 6 & 1-12-22  & VH & Schrijven van H3.1 en H3.2\\
+   	 7 & 1-12-22 & VH & Schrijven van H4.1 en H4.2\\
+   	 8 & 3-12-22 & VH & Schrijven van H4.2.2\\
+   	 9 & 4-12-22 & VH & Schrijven van H4.2.3, H4.2.4 en H4.2.5\\
+   	 10 & 4-12-22 & VH & Toevoegen illustrerende figuren bij tekst in H3\\
+   	 11 & 7-12-22 & VH & Schrijven van H5\\
+   	 12 & 11-12-22 & VH & Toevoegen testresultaten in H5\\
+   	 
+	\end{tabular}
+
+ 
+  \newpage 
+  \tableofcontents
+  \newpage
+  \pagenumbering{arabic}
+  \chapter{Introductie}
+  \subfile{sections/Introduction}
+  \chapter{Achtergrond}
+  \subfile{sections/Background}
+  \chapter{Onderzoeksmethode}
+  \subfile{sections/Work_method}
+  \chapter{Onderzoek}
+  \subfile{sections/Executed_search}
+  \chapter{Resultaten en Conclusies}
+  \subfile{sections/Results_and_conclusions}] 
+  \chapter{Bijlagen}
+  \subfile{sections/Appendixes}
+  \printbibliography[
+	heading=bibintoc,
+	title={Bronnen}]
+\end{document}
